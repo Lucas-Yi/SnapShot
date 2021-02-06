@@ -2,20 +2,14 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 const Navigation = ()=>{
-    return <div>
-        <Link to='/'>
-            <button>Mountain</button>
-        </Link>
-        <Link to='/Beach'>
-            <button>Beaches</button>
-        </Link>
-        <Link to='/Bird'>
-            <button>Birds</button>
-        </Link>
-        <Link to='/Food'>
-            <button>Food</button>
-        </Link>
-    </div>
+    return <nav className="main-nav">
+        <ul>
+            <li><Link to='/'>Mountain</Link></li>
+            <li><Link to='/Beach'>Beaches</Link></li>
+            <li><Link to='/Bird'>Birds</Link></li>
+            <li><Link to='/Food'>Food</Link></li>
+        </ul>
+    </nav>
 }
 
 export default Navigation

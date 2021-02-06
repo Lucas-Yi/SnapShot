@@ -1,4 +1,3 @@
-import './App.css';
 import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom"
 import React from "react"
 import Item from "./component/Item"
@@ -7,7 +6,11 @@ import Header from "./component/Header"
 function App() {
 
   return <BrowserRouter>
-    <Header />
+    <Route render={
+      props=>(
+        <Header history={props.history}/>
+      )}
+    />
     <Switch>
       <Route 
         exact 
@@ -20,7 +23,7 @@ function App() {
       <Route path='/food' render={()=><Item searchTerm="food"/>}/>
       <Route 
         path='/search/:searchContent'
-        render={()=>null}
+        render={(props)=><Item searchTerm={props.match.params.searchContent}/>}
       />
     </Switch>
   </BrowserRouter>
